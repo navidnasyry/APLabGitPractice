@@ -8,3 +8,6 @@ int main()
 	printf("%d", *p);
 	return 0;
 }
+
+
+//3
