@@ -66,7 +66,7 @@ void set()
 int size()
 {
 	alfaptr node = front;
-	int count;
+	int count = 0;
 	while (node)
 		count++;node = node->next;
 	return count;
@@ -88,7 +88,8 @@ int average()
 {
 
 	alfaptr node = front;
-	int sum = 0, count;
+	int sum = 0;
+	int count = 0;
 	while (node) {
 		sum += node->x;
 		count++;
@@ -103,11 +104,11 @@ void main()
 	long long int x;
 	while (true)
 	{
-		scanf("%d", &cmd);
+		scanf_s("%d", &cmd);
 		switch (cmd)
 		{
 		case 1://push
-			scanf("%lld", &x);
+			scanf_s("%lld", &x);
 			push(x);
 			break;
 		case 2://pop
@@ -117,7 +118,7 @@ void main()
 			rpop();
 			break;
 		case 4://search
-			scanf("%lld", &x);
+			scanf_s("%lld", &x);
 			search(x);
 			break;
 		case 5://set
