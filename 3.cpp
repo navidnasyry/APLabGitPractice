@@ -1,11 +1,12 @@
-﻿#include<stdio.h>
-#include<stdlib.h>
+﻿#include <stdio.h>
+#include <stdlib.h>
 #define MAX_SIZE 200
 int arr[MAX_SIZE];
 
-typedef struct alfa * alfaptr;
+typedef struct alfa *alfaptr;
 
-struct alfa {
+struct alfa
+{
 	long long x;
 	alfaptr next;
 };
@@ -17,7 +18,8 @@ void push(int x)
 	node->x = x;
 	if (!front)
 		front = node;
-	else {
+	else
+	{
 		rear->next = node;
 		rear = node;
 	}
@@ -41,14 +43,16 @@ void search(int x)
 	while (node)
 		if (node->x == x)
 			printf("%d", counter);
-		else {
+		else
+		{
 			printf("ERROR2");
 			break;
 		}
-		node = node->next;
+	node = node->next;
 }
 
-void rpop() {//pop last element
+void rpop()
+{ // pop last element
 	alfaptr node = front;
 	while (node)
 		node = node->next;
@@ -68,13 +72,15 @@ int size()
 	alfaptr node = front;
 	int count;
 	while (node)
-		count++;node = node->next;
+		count++;
+	node = node->next;
 	return count;
 }
 
 void show()
 {
-	if (!front) {
+	if (!front)
+	{
 		for (int i = 0; i < MAX_SIZE; i++)
 			printf("%d ", arr[i]);
 	}
@@ -89,7 +95,8 @@ int average()
 
 	alfaptr node = front;
 	int sum = 0, count;
-	while (node) {
+	while (node)
+	{
 		sum += node->x;
 		count++;
 		node = node->next;
@@ -97,7 +104,7 @@ int average()
 	return sum / count;
 }
 
-void main()
+int main()
 {
 	int cmd;
 	long long int x;
@@ -106,27 +113,27 @@ void main()
 		scanf("%d", &cmd);
 		switch (cmd)
 		{
-		case 1://push
+		case 1: // push
 			scanf("%lld", &x);
 			push(x);
 			break;
-		case 2://pop
+		case 2: // pop
 			pop();
 			break;
-		case 3://rpop
+		case 3: // rpop
 			rpop();
 			break;
-		case 4://search
+		case 4: // search
 			scanf("%lld", &x);
 			search(x);
 			break;
-		case 5://set
+		case 5: // set
 			set();
 			break;
-		case 6://show
+		case 6: // show
 			show();
 			break;
-		case 7://size
+		case 7: // size
 			printf("%d", size());
 			break;
 		case 10:
@@ -134,3 +141,5 @@ void main()
 		}
 	}
 }
+
+// if you enter 10 the program will be finished
