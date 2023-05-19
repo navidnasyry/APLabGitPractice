@@ -1,5 +1,5 @@
-﻿#include<stdio.h>
-#include<stdlib.h>
+﻿#include <stdio.h>
+#include <stdlib.h>
 #define MAX_SIZE 200
 int arr[MAX_SIZE];
 
@@ -31,6 +31,7 @@ void pop()
 	else
 	{
 		node = front->next;
+		free(front);
 		front = node;
 	}
 }
@@ -38,22 +39,27 @@ void search(int x)
 {
 	alfaptr node = front;
 	int counter = 0;
-	while (node)
+	while (node) {
 		if (node->x == x)
-			printf("%d", counter);
+			printf("%d", ++counter);
 		else {
 			printf("ERROR2");
 			break;
 		}
 		node = node->next;
+	}
 }
 
 void rpop() {//pop last element
 	alfaptr node = front;
-	while (node)
+	alfaptr prev = NULL;
+	while (node->next) {
+		prev = node;
 		node = node->next;
+	}
+
 	free(rear);
-	rear = node;
+	rear = prev;
 }
 
 void set()
@@ -66,16 +72,18 @@ void set()
 int size()
 {
 	alfaptr node = front;
-	int count;
-	while (node)
-		count++;node = node->next;
+	int count = 0;
+	while (node){
+		count++;
+		node = node->next;
+	}
 	return count;
 }
 
 void show()
 {
 	if (!front) {
-		for (int i = 0; i < MAX_SIZE; i++)
+		for (int i = 0; i < size(); i++)
 			printf("%d ", arr[i]);
 	}
 	else
@@ -88,7 +96,7 @@ int average()
 {
 
 	alfaptr node = front;
-	int sum = 0, count;
+	long long sum = 0, count=0;
 	while (node) {
 		sum += node->x;
 		count++;
@@ -97,11 +105,11 @@ int average()
 	return sum / count;
 }
 
-void main()
+int main()
 {
 	int cmd;
 	long long int x;
-	while (true)
+	while (1)
 	{
 		scanf("%d", &cmd);
 		switch (cmd)
@@ -133,4 +141,6 @@ void main()
 			exit(0);
 		}
 	}
+
+	return 0;
 }
