@@ -38,3 +38,4 @@ int main() {
 	//v2.getlen = 40;
 	//cout << v2.getlen();
 }
+// result=100
