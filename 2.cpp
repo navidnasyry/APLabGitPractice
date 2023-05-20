@@ -7,7 +7,7 @@ using namespace std;
 int countAllSpecificChars(string sArr[], int arrLength, char specificChar) {
     int count=0;
     for (int i = 0; i < arrLength; ++i)
-        for (int j = 0; j <= sArr[i].size(); ++j)
+        for (int j = 0; j < sArr[i].size(); ++j)
             // if the jth char of the string is the specific char
             if (sArr[i][j] = specificChar)
                 count++;
