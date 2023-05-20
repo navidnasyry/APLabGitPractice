@@ -36,5 +36,5 @@ int main() {
 	cout << c2.getsize();
 	//vector v2 = 100;
 	//v2.getlen = 40;
-	cout << v2.getlen();
+	//cout << v2.getlen();
 }
