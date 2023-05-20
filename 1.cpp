@@ -29,7 +29,7 @@ public:
 int main() {
 
 	container c1(100);
-	vector v1 = c1;
+	//vector v1 = c1;
 	container& r1 = v1;
 	container c2 = 100;
 	c2.getsize() = 20;
