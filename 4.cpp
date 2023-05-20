@@ -7,3 +7,5 @@ int main()
     printf("%f", *ptr2 - *ptr1);
     return 0;
 }
+//78.000
+//arr[3] - arr[0]
