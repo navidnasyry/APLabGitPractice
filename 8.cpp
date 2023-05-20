@@ -1,6 +1,6 @@
 ﻿#include <stdio.h>
 const char *f(const char **p) {
-    char *q = (p + sizeof(char))[1];
+    char *q = (char *)(p + sizeof(char))[1];
     return q;
 }
 int main() {
