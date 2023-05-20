@@ -19,7 +19,7 @@ public:
 		p = new float();
 	}
 	int len;
-	int& getlen() const {
+	int& getlen() {
 		call_num ++;
 		return len;
 	}
