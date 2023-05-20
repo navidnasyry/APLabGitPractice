@@ -9,3 +9,5 @@ int main()
 	printf("%d\n", a);
 	return 0;
 }
+//513
+// turns the last bit to 1 
