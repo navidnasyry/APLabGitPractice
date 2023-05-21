@@ -8,4 +8,5 @@ int main()
     char s = (*ptr2 - *ptr1) + '0';
     printf("%c", s);
     return 0;
+    // changed
 }
